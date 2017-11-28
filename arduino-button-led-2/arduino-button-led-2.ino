@@ -1,6 +1,6 @@
-// btnPin defines the Arduino input pin to which the
+// BTNPIN defines the Arduino input pin to which the
 // button is connected
-const int btnPin = 2;
+const int BTNPIN = 2;
 
 // btnState stores the current button state (HIGH or LOW)
 // initialize it to LOW so the LED stays off until the sketch
@@ -13,7 +13,7 @@ int ledState = LOW;
 // Specifies the amount of time the button must stay pushed for it
 // to trigger the LED on or off. Increase this value if your LED
 // flickers
-const unsigned long DEBOUNCE_DELTA = 100;    // milliseconds
+unsigned long DEBOUNCE_DELTA = 100;    // milliseconds
 // Stores the last time the status of the button changed
 unsigned long lastToggle = 0;
 
@@ -21,14 +21,14 @@ void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
   // initialize the pushbutton pin as an input:
-  pinMode(btnPin, INPUT);
+  pinMode(BTNPIN, INPUT);
   // set the initial state of the LED
   digitalWrite(LED_BUILTIN, ledState);
 }
 
 void loop() {
   // Read the current state of the button
-  btnState = digitalRead(btnPin);
+  btnState = digitalRead(BTNPIN);
 
   // Is the button in the same state as the last time we came through the
   // loop? No? Then we need to record the current time (in milliseconds)
@@ -43,7 +43,7 @@ void loop() {
     // OK, the button states (current and previous) are the same
     //Lets see if they've been the same for DEBOUNCE_DELTA milliseconds
     if ((millis() - lastToggle) > DEBOUNCE_DELTA) {
-      // the button's been pushed (or not pushed) for at least debounceDelta
+      // the button's been pushed (or not pushed) for at least DEBOUNCE_DELTA
       // milliseconds, so its time to toggle the LED if needed
       //Is the LED at the same state as the button?
       if (ledState != btnState) {
