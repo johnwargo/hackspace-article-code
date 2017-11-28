@@ -13,7 +13,7 @@ int ledState = LOW;
 // Specifies the amount of time the button must stay pushed for it
 // to trigger the LED on or off. Increase this value if your LED
 // flickers
-unsigned long debounceDelta = 100;    // milliseconds
+const unsigned long DEBOUNCE_DELTA = 100;    // milliseconds
 // Stores the last time the status of the button changed
 unsigned long lastToggle = 0;
 
@@ -41,8 +41,8 @@ void loop() {
     prevBtnState = btnState;
   } else {
     // OK, the button states (current and previous) are the same
-    //Lets see if they've been the same for debounceDelta milliseconds
-    if ((millis() - lastToggle) > debounceDelta) {
+    //Lets see if they've been the same for DEBOUNCE_DELTA milliseconds
+    if ((millis() - lastToggle) > DEBOUNCE_DELTA) {
       // the button's been pushed (or not pushed) for at least debounceDelta
       // milliseconds, so its time to toggle the LED if needed
       //Is the LED at the same state as the button?
