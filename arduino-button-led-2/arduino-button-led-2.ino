@@ -2,6 +2,11 @@
 // button is connected
 const int BTNPIN = 2;
 
+// Specifies the amount of time the button must stay pushed for it
+// to trigger the LED on or off. Increase this value if your LED
+// flickers
+const unsigned long DEBOUNCE_DELTA = 50;    // milliseconds
+
 // btnState stores the current button state (HIGH or LOW)
 // initialize it to LOW so the LED stays off until the sketch
 // reads a HIGH state for the button input
@@ -10,10 +15,6 @@ int btnState = LOW;
 int prevBtnState = LOW;
 // Used to track the current state of the LED
 int ledState = LOW;
-// Specifies the amount of time the button must stay pushed for it
-// to trigger the LED on or off. Increase this value if your LED
-// flickers
-unsigned long DEBOUNCE_DELTA = 100;    // milliseconds
 // Stores the last time the status of the button changed
 unsigned long lastToggle = 0;
 
