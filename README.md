@@ -5,4 +5,4 @@ I'm writing a series of articles in [HackSpace Magazine](https://hackspace.raspb
 | ----- | -------------------------------------------- | -------------------------------------- |
 | 1     | Add Arduino power to your projects           | [arduino-led-blink](arduino-led-blink) |
 | 2     | Reading digital data on the Arduino platform | [arduino-button-led-1](arduino-button-led-1), [arduino-button-led-2](arduino-button-led-2) |
-| 3     | Reading Digital Data: Part 2                 | [arduino-dht22-1](arduino-dht22-1) [arduino-dht22-2](arduino-dht22-2) |
+| 3     | Reading Digital Data: Part 2                 | [arduino-dht22-1](arduino-dht22-1), [arduino-dht22-2](arduino-dht22-2) |
