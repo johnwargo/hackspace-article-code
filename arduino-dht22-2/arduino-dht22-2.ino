@@ -67,11 +67,15 @@ void loop() {
   // ==========================================================================
 
   // Read temperature in degrees Fahrenheit
-  float tempF = dht.readTemperature(true);
+  float currTemp = dht.readTemperature(true);
+  // To work in degrees Celsius, do the following:
+  //float currTemp = dht.readTemperature(false);
+  // or you can use this alternate method:
+  //float currTemp = dht.readTemperature();
 
   // Make sure the sketch was able to read values from the sensor before
   // continuing. The return exits the loop (try again)
-  if (isnan(tempF))  {
+  if (isnan(currTemp))  {
     Serial.println("Failed to read from DHT sensor!");
     return;
   }
@@ -83,11 +87,11 @@ void loop() {
   //  if (TRIGGER_DIRECTION < GREATER_THAN) {
   //    // Then we're doing a less than option, so check to
   //    // see if the current temp is less than the trigger temp
-  //    ledStatus = (tempF < TRIGGER_TEMP);
+  //    ledStatus = (currTemp < TRIGGER_TEMP);
   //  } else {
   //    // Otherwise, we're doing a greater than option, so check to
   //    // see if the current temp is greater than the trigger temp
-  //    ledStatus = (tempF > TRIGGER_TEMP);
+  //    ledStatus = (currTemp > TRIGGER_TEMP);
   //  }
   //
   //  // Now set the LED power output based on ledStatus
@@ -102,11 +106,11 @@ void loop() {
   if (TRIGGER_DIRECTION < GREATER_THAN) {
     // Then we're doing a less than option, so check to
     // see if the current temp is less than the trigger temp
-    digitalWrite(LEDPIN, (tempF < TRIGGER_TEMP) ? HIGH : LOW);
+    digitalWrite(LEDPIN, (currTemp < TRIGGER_TEMP) ? HIGH : LOW);
   } else {
     // Otherwise, we're doing a greater than option, so check to
     // see if the current temp is greater than the trigger temp
-    digitalWrite(LEDPIN, (tempF > TRIGGER_TEMP) ? HIGH : LOW);
+    digitalWrite(LEDPIN, (currTemp > TRIGGER_TEMP) ? HIGH : LOW);
   }
 
 }
