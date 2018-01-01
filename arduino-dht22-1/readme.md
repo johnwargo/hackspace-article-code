@@ -1,3 +1,3 @@
 # Arduino DHT22 (#1)
 
-This is a simple Arduino application that reads temperature and humidity data from a [DHT22](https://www.adafruit.com/product/385) device.
+This is a simple Arduino application that reads temperature and humidity data from a [DHT22](https://www.adafruit.com/product/385) device. Recorded data is sent to the Serial Monitor for display.
