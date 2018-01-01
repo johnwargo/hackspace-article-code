@@ -109,7 +109,6 @@ void loop() {
     digitalWrite(LEDPIN, (tempF > TRIGGER_TEMP) ? HIGH : LOW);
   }
 
-
 }
 
 void blinkLED(int loopCount, int duration) {
